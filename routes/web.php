@@ -40,7 +40,7 @@ Route::get('/modal-periodic-information-list/{id}', [FrontendController::class, 
 Route::get('/modal-immediately-information-list/{id}', [FrontendController::class, 'modalImmediatelyInformationList']);
 Route::get('/modal-other-information-list/{id}', [FrontendController::class, 'modalOtherInformationList']);
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard', function () {
