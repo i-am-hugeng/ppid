@@ -41,6 +41,7 @@ Route::get('/modal-immediately-information-list/{id}', [FrontendController::clas
 Route::get('/modal-other-information-list/{id}', [FrontendController::class, 'modalOtherInformationList']);
 
 Auth::routes(['register' => false]);
+// Auth::routes();
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard', function () {

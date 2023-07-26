@@ -16,7 +16,7 @@ class CreateImmediatelyInformationListsTable extends Migration
         Schema::create('immediately_information_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('parent_id');
-            $table->longText('description');
+            $table->text('description');
             $table->string('url');
             $table->timestamps();
         });

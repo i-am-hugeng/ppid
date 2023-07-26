@@ -16,7 +16,7 @@ class CreatePeriodicInformationListsTable extends Migration
         Schema::create('periodic_information_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('parent_id');
-            $table->longText('description');
+            $table->text('description');
             $table->string('url');
             $table->timestamps();
         });

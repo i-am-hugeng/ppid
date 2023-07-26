@@ -17,7 +17,7 @@ class CreateRegulationListsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('regulation_id');
             $table->string('regulation_number');
-            $table->longText('regulation_about');
+            $table->text('regulation_about');
             $table->string('regulation_url');
             $table->timestamps();
         });

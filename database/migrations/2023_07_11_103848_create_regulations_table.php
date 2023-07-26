@@ -15,7 +15,7 @@ class CreateRegulationsTable extends Migration
     {
         Schema::create('regulations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->longText('category');
+            $table->text('category');
             $table->timestamps();
         });
 

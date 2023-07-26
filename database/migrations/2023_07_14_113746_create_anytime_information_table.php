@@ -15,7 +15,7 @@ class CreateAnytimeInformationTable extends Migration
     {
         Schema::create('anytime_information', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->longText('category');
+            $table->text('category');
             $table->timestamps();
         });
 

@@ -15,7 +15,7 @@ class CreatePeriodicInformationTable extends Migration
     {
         Schema::create('periodic_information', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->longText('category');
+            $table->text('category');
             $table->timestamps();
         });
 

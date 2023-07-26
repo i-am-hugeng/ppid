@@ -15,7 +15,7 @@ class CreateImmediatelyInformationTable extends Migration
     {
         Schema::create('immediately_information', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->longText('category');
+            $table->text('category');
             $table->timestamps();
         });
 

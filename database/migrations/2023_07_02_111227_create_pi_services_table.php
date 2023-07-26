@@ -16,7 +16,7 @@ class CreatePiServicesTable extends Migration
         Schema::create('pi_services', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->longText('description');
+            $table->text('description');
             $table->string('url');
             $table->timestamps();
         });
