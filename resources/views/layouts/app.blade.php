@@ -18,13 +18,7 @@
 </head>
 
 <body class="hold-transition login-page">
-    <div id="app">
-        <div class="wrapper">
-            <main class="py-4">
-                @yield('content')
-            </main>
-        </div>
-    </div>
+    @yield('content')
 </body>
 
 </html>

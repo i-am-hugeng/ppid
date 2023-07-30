@@ -1,5 +1,5 @@
 function closeModal() {
-    $(".modal-body").html("");
+    $(".modal-body-regulation-list").html("");
     $(".modal-body-public-information-list").html("");
     $(".modal-body-anytime-information-list").html("");
     $(".modal-body-periodic-information-list").html("");
@@ -18,7 +18,7 @@ $(document).on("click", ".regulation-list", function () {
         success: function (response) {
             $("#title-regulation-modal").html(response.category.category);
 
-            $(".modal-body").append(
+            $(".modal-body-regulation-list").append(
                 '<div class="container">\
                     <table id="table-regulation-list" class="table table-bordered">\
                         <thead>\

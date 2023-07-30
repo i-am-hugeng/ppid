@@ -251,7 +251,7 @@
                                     <p class="lh-base">{!! $profileContent->description !!}</p>
                                     @if (!empty($profileContent->img))
                                         <img src="{{ asset('uploaded-images/' . $profileContent->img) }}"
-                                            width="650" />
+                                            class="img-fluid" width="650" />
                                     @endif
                                 </li>
                                 {{-- <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in
@@ -631,15 +631,21 @@
 
                 <div class="row">
 
-                    <div class="col-lg-8" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                         <div class="member d-flex align-items-start">
                             <img src="{{ asset('bsn/maklumat.png') }}" class="glightbox img-fluid" alt="">
                         </div>
                     </div>
                     <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                         <div class="member d-flex align-items-start">
-                            <img src="{{ asset('bsn/prosedur-permintaan-informasi.jpg') }}"
-                                class="glightbox img-fluid" alt="">
+                            <img src="{{ asset('bsn/prosedur-permohonan-ppid.png') }}" class="glightbox img-fluid"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="member d-flex align-items-start">
+                            <img src="{{ asset('bsn/prosedur-keberatan-ppid.png') }}" class="glightbox img-fluid"
+                                alt="">
                         </div>
                     </div>
 

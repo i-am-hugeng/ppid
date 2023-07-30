@@ -39,7 +39,7 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="form-group row">
+                    <div class="input-group mb-4">
                         {!! htmlFormSnippet() !!}
                     </div>
                     <div class="row">
