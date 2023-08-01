@@ -10,7 +10,7 @@ class ImmediatelyInformationController extends Controller
 {
     public function index()
     {
-        return view('pages.backend.master-data.public-information-category.Immediately-information');
+        return view('pages.backend.master-data.public-information-category.immediately-information');
     }
 
     public function showImmediatelyInformation()
