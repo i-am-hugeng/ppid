@@ -67,6 +67,26 @@
 
             <div class="card">
                 <div class="card-header">
+                    <h3 class="card-title">Grafik Data Informasi Publik</h3>
+                    {{-- <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div> --}}
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div id="public-information-chart"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card-header">
                     <h3 class="card-title">Grafik Data Informasi Setiap Saat</h3>
                     {{-- <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -202,6 +222,43 @@
                     ]
                 }
             ]
+        });
+
+    </script>
+    <script type="text/javascript">
+        // Public Information Chart
+        Highcharts.chart('public-information-chart', {
+            chart: {
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 60
+                }
+            },
+            title: {
+                text: '',
+                align: 'left'
+            },
+            subtitle: {
+                text: '',
+                align: 'left'
+            },
+            plotOptions: {
+                pie: {
+                    innerSize: 100,
+                    depth: 45
+                }
+            },
+            series: [{
+                name: 'Medals',
+                data: [
+                    ['Informasi Setiap Saat ({{ $anytimeInformationListCount }})', {{ $anytimeInformationListCount }}],
+                    ['Informasi Berkala ({{ $periodicInformationListCount }})', {{ $periodicInformationListCount }}],
+                    ['Informasi Serta Merta ({{ $immediatelyInformationListCount }})', {{ $immediatelyInformationListCount }}],
+                    ['Informasi Lainnya ({{ $otherInformationListCount }})', {{ $otherInformationListCount }}],
+
+                ]
+            }]
         });
 
     </script>

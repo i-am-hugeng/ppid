@@ -22,6 +22,12 @@ class DashboardController extends Controller
 
         $faqTotal = Faq::count();
 
+        // Public Information Chart
+        $anytimeInformationListCount = AnytimeInformationList::select('id')->count();
+        $periodicInformationListCount = PeriodicInformationList::select('id')->count();
+        $immediatelyInformationListCount = ImmediatelyInformationList::select('id')->count();
+        $otherInformationListCount = OtherInformationList::select('id')->count();
+
         $regulationChart = DB::table('regulations')
             ->join('regulation_lists','regulations.id', 'regulation_lists.regulation_id')
             ->select('regulations.category')
@@ -66,6 +72,10 @@ class DashboardController extends Controller
             'periodicInformationChart',
             'immediatelyInformationChart',
             'otherInformationChart',
+            'anytimeInformationListCount',
+            'periodicInformationListCount',
+            'immediatelyInformationListCount',
+            'otherInformationListCount',
         ));
     }
 }
