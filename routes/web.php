@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\PiServiceController;
@@ -44,9 +45,8 @@ Auth::routes(['register' => false]);
 // Auth::routes();
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('pages.backend.dashboard');
-    });
+    // Dashboard
+    Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 
     // Profile
     Route::get('/admin/profile', [ProfileController::class, 'index']);

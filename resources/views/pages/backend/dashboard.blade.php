@@ -21,7 +21,7 @@
                         <span class="info-box-icon bg-gradient-info"><i class="fas fa-gavel"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Regulasi</span>
-                            <span class="info-box-number">1,410</span>
+                            <span class="info-box-number">{{ $regulationTotal }}</span>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                         <span class="info-box-icon bg-gradient-pink"><i class="fas fa-bullhorn"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Informasi Publik</span>
-                            <span class="info-box-number">1,410</span>
+                            <span class="info-box-number">{{ $publicInformationTotal }}</span>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                         <span class="info-box-icon bg-gradient-lime text-white"><i class="fas fa-question"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">FAQ</span>
-                            <span class="info-box-number">1,410</span>
+                            <span class="info-box-number">{{ $faqTotal }}</span>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Title</h3>
+                    <h3 class="card-title">Grafik Data Regulasi</h3>
                     {{-- <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
@@ -59,12 +59,88 @@
                 </div>
                 <div class="card-body">
                     <div class="container-fluid">
-                        <div id="container"></div>
+                        <div id="regulation-chart"></div>
                     </div>
                 </div>
 
-                <div class="card-footer">
-                    Footer
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Grafik Data Informasi Setiap Saat</h3>
+                    {{-- <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div> --}}
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div id="anytime-information-chart"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Grafik Data Informasi Berkala</h3>
+                    {{-- <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div> --}}
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div id="periodic-information-chart"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Grafik Data Informasi Serta Merta</h3>
+                    {{-- <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div> --}}
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div id="immediately-information-chart"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Grafik Data Informasi Lainnya</h3>
+                    {{-- <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div> --}}
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div id="other-information-chart"></div>
+                    </div>
                 </div>
 
             </div>
@@ -78,88 +154,247 @@
 @section('scripts')
     <!-- Highcharts -->
     <script src="{{ asset('highcharts/highcharts.js') }}"></script>
-    {{-- <script src="{{ asset('highcharts/exporting.js') }}"></script>
+    <script src="{{ asset('highcharts/exporting.js') }}"></script>
     <script src="{{ asset('highcharts/export-data.js') }}"></script>
-    <script src="{{ asset('highcharts/accessibility.js') }}"></script> --}}
+    <script src="{{ asset('highcharts/accessibility.js') }}"></script>
     <script src="{{ asset('highcharts/brand-dark.js') }}"></script>
 
     <script type="text/javascript">
-        // Data retrieved from https://netmarketshare.com/
-        // Make monochrome colors
-        const colors = Highcharts.getOptions().colors.map((c, i) =>
-            // Start out with a darkened base color (negative brighten), and end
-            // up with a much brighter color
-            Highcharts.color(Highcharts.getOptions().colors[0])
-            .brighten((i - 3) / 7)
-            .get()
-        );
-
-        // Build the chart
-        Highcharts.chart('container', {
+        // Regulation Chart
+        Highcharts.chart('regulation-chart', {
             chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false,
-                type: 'pie'
+                type: 'bar'
             },
             title: {
-                text: 'Browser market shares in February, 2022',
-                align: 'left'
+                text: ''
             },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            xAxis: {
+                categories: [
+                    @foreach ($regulationChart as $item)
+                        '{{ $item->category }}',
+                    @endforeach
+                ]
             },
-            accessibility: {
-                point: {
-                    valueSuffix: '%'
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
                 }
+            },
+            legend: {
+                reversed: true
             },
             plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    colors,
-                    borderRadius: 5,
+                series: {
+                    stacking: 'normal',
                     dataLabels: {
-                        enabled: true,
-                        format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-                        distance: -50,
-                        filter: {
-                            property: 'percentage',
-                            operator: '>',
-                            value: 4
-                        }
+                        enabled: true
                     }
                 }
             },
-            series: [{
-                name: 'Share',
-                data: [{
-                        name: 'Chrome',
-                        y: 74.03
-                    },
-                    {
-                        name: 'Edge',
-                        y: 12.66
-                    },
-                    {
-                        name: 'Firefox',
-                        y: 4.96
-                    },
-                    {
-                        name: 'Safari',
-                        y: 2.49
-                    },
-                    {
-                        name: 'Internet Explorer',
-                        y: 2.31
-                    },
-                    {
-                        name: 'Other',
-                        y: 3.398
-                    }
-                ]
-            }]
+            series: [
+                {
+                    name: 'Jumlah Regulasi',
+                    data: [
+                        @foreach ($regulationChart as $item)
+                        {{ $item->regListTotal }},
+                    @endforeach
+                    ]
+                }
+            ]
         });
+
+    </script>
+
+    <script type="text/javascript">
+        // Anytime Information Chart
+        Highcharts.chart('anytime-information-chart', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    @foreach ($anytimeInformationChart as $item)
+                        '{{ $item->category }}',
+                    @endforeach
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            legend: {
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'Jumlah Informasi',
+                    data: [
+                        @foreach ($anytimeInformationChart as $item)
+                        {{ $item->informationListTotal }},
+                    @endforeach
+                    ]
+                }
+            ]
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
+        // Periodic Information Chart
+        Highcharts.chart('periodic-information-chart', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    @foreach ($periodicInformationChart as $item)
+                        '{{ $item->category }}',
+                    @endforeach
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            legend: {
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'Jumlah Informasi',
+                    data: [
+                        @foreach ($periodicInformationChart as $item)
+                        {{ $item->informationListTotal }},
+                    @endforeach
+                    ]
+                }
+            ]
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
+        // Immediately Information Chart
+        Highcharts.chart('immediately-information-chart', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    @foreach ($immediatelyInformationChart as $item)
+                        '{{ $item->category }}',
+                    @endforeach
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            legend: {
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'Jumlah Informasi',
+                    data: [
+                        @foreach ($immediatelyInformationChart as $item)
+                        {{ $item->informationListTotal }},
+                    @endforeach
+                    ]
+                }
+            ]
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
+        // Other Information Chart
+        Highcharts.chart('other-information-chart', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    @foreach ($otherInformationChart as $item)
+                        '{{ $item->category }}',
+                    @endforeach
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            legend: {
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'Jumlah Informasi',
+                    data: [
+                        @foreach ($otherInformationChart as $item)
+                        {{ $item->informationListTotal }},
+                    @endforeach
+                    ]
+                }
+            ]
+        });
+
+
     </script>
 @endsection

@@ -204,7 +204,7 @@
                     d(
                         "link",
                         {
-                            href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:200,300,400,600,700",
+                            href: "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback",
                             rel: "stylesheet",
                             type: "text/css",
                         },
