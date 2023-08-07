@@ -282,9 +282,7 @@
 
                 <div class="section-title">
                     <h2>Kontak Kami</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>PPID BADAN STANDARDISASI NASIONAL.</p>
                 </div>
 
                 <div class="row">
@@ -462,9 +460,7 @@
 
                 <div class="section-title">
                     <h2>Daftar Regulasi</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>PERATURAN DAN RANCANGAN PERATURAN KETERBUKAAN INFORMASI PUBLIK BADAN STANDARDISASI NASIONAL.</p>
                 </div>
 
                 <div class="row">
@@ -494,9 +490,7 @@
 
                 <div class="section-title">
                     <h2>Daftar Informasi Setiap Saat</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>INFORMASI PUBLIK BADAN STANDARDISASI NASIONAL YANG DISEDIAKAN DAN DIUMUMKAN SETIAP SAAT.</p>
                 </div>
 
                 <div class="row">
@@ -526,9 +520,7 @@
 
                 <div class="section-title">
                     <h2>Daftar Informasi Berkala</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>INFORMASI PUBLIK BADAN STANDARDISASI NASIONAL YANG DISEDIAKAN DAN DIUMUMKAN SECARA BERKALA.</p>
                 </div>
 
                 <div class="row">
@@ -559,9 +551,7 @@
 
                 <div class="section-title">
                     <h2>Daftar Informasi Serta Merta</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>INFORMASI PUBLIK BADAN STANDARDISASI NASIONAL YANG DISEDIAKAN DAN DIUMUMKAN SERTA MERTA.</p>
                 </div>
 
                 <div class="row">
@@ -592,9 +582,7 @@
 
                 <div class="section-title">
                     <h2>Daftar Informasi Lainnya</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>INFORMASI LAINNYA YANG DISEDIAKAN DAN DIUMUMKAN OLEH BADAN STANDARDISASI NASIONAL.</p>
                 </div>
 
                 <div class="row">
@@ -624,9 +612,7 @@
 
                 <div class="section-title">
                     <h2>Layanan Informasi Publik</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>LAYANAN INFORMASI PUBLIK BADAN STANDARDISASI NASIONAL.</p>
                 </div>
 
                 <div class="row">
@@ -743,7 +729,7 @@
 
                 <div class="section-title">
                     <h2>Frequently Asked Questions</h2>
-                    <p>Dokumentasi pertanyaan dan jawaban seputar standardisasi dan penilaian kesesuaian.</p>
+                    <p>DOKUMENTASI PERTANYAAN DAN JAWABAN SEPUTAR INFORMASI STANDARDISASI DAN PENILAIAN KESESUAIAN.</p>
                 </div>
 
                 <div class="faq-list">
@@ -774,19 +760,28 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
 
-        {{-- <div class="footer-newsletter">
+        <div class="footer-newsletter">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-                    </div>
+                    <!-- Histats.com  (div with counter) -->
+                    <div id="histats_counter"></div>
+                    <a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4789001&101" alt="" border="0"></a>
+                    <!-- Histats.com  START  (aync)-->
+                    <script type="text/javascript">
+                        var _Hasync= _Hasync|| [];
+                        _Hasync.push(['Histats.start', '1,4789001,4,15,170,40,00011111']);
+                        _Hasync.push(['Histats.fasi', '1']);
+                        _Hasync.push(['Histats.track_hits', '']);
+                        (function() {
+                            var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+                            hs.src = ('//s10.histats.com/js15_as.js');
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+                        })();
+                    </script>
+                    <!-- Histats.com  END  -->
                 </div>
             </div>
-        </div> --}}
+        </div>
 
         <div class="footer-top">
             <div class="container">
@@ -794,13 +789,19 @@
 
                     <div class="col-lg-3 col-md-6 footer-contact">
                         <h3>Badan Standardisasi Nasional</h3>
-                        <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
+                        @foreach ($contactContents as $contactContent)
+                            @if ($contactContent->title == 'Alamat')
+                                <p>{{ $contactContent->description }}</p>
+                            @endif
+                            <p>
+                                @if ($contactContent->title == 'Whatsapp')
+                                    <strong>Whatsapp:</strong> {{ $contactContent->description }}<br>
+                                @endif
+                                @if ($contactContent->title == 'Email')
+                                    <strong>Email:</strong> {{ $contactContent->description }}<br>
+                                @endif
+                            </p>
+                        @endforeach
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
@@ -883,6 +884,7 @@
         </div>
 
         <div class="container footer-bottom clearfix d-flex align-items-center justify-content-center">
+            
             <div class="copyright">
                 &copy; Hak Cipta <strong><span><a href="https://bsn.go.id/">Badan Standardisasi
                             Nasional</a></span></strong> Tahun 2023.
