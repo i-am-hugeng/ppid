@@ -891,7 +891,6 @@
     <script src="{{ asset('arsha/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('arsha/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('arsha/assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
-    <script src="{{ asset('arsha/assets/vendor/php-email-form/validate.js') }}"></script>
 
     <!-- Jquery JS File -->
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
