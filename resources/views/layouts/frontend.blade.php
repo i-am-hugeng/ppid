@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6G0CK35V8F"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6G0CK35V8F');
+    </script>
+    
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -46,7 +56,7 @@
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html"><img src="{{ asset('bsn/bsn-logo.png') }}" width="200px"
+            <h1 class="logo me-auto"><a href="{{ url('/') }}"><img src="{{ asset('bsn/bsn-logo.png') }}" width="200px"
                         alt="logo-ppid" /></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -304,11 +314,8 @@
                                     <p>{{ $contactContent->description }}</p>
                                 </div>
                             @endforeach
-
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.595208148395!2d106.82010237395151!3d-6.184892560597525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f428c48fffff%3A0x6482fd44854ce4f1!2sBADAN%20STANDARDISASI%20NASIONAL!5e0!3m2!1sid!2sid!4v1688880129924!5m2!1sid!2sid"
-                                frameborder="0" style="border:0; width: 100%; height: 290px;" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                            
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2069430255206!2d106.8205038738961!3d-6.236431261068605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f36a70592c2d%3A0xb7e21ff0384fde0d!2sBadan%20Standardisasi%20Nasional%20(BSN)!5e0!3m2!1sid!2sid!4v1692790200908!5m2!1sid!2sid" style="border:0; width: 100%; height: 290px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
 
                     </div>
