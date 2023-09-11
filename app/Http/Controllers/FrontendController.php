@@ -19,6 +19,7 @@ use App\Models\ImmediatelyInformation;
 use App\Models\ImmediatelyInformationList;
 use App\Models\OtherInformation;
 use App\Models\OtherInformationList;
+use Illuminate\Support\Facades\Crypt;
 
 class FrontendController extends Controller
 {
@@ -50,9 +51,10 @@ class FrontendController extends Controller
 
     public function modalRegulationList($id)
     {
-        $category = Regulation::where('id', $id)->first();
+        $decryptedID = decrypt($id);
+        $category = Regulation::where('id', $decryptedID)->first();
 
-        $regulation = RegulationList::where('regulation_id', $id)->get();
+        $regulation = RegulationList::where('regulation_id', $decryptedID)->get();
 
         return response()->json([
             "category" => $category,
@@ -62,9 +64,10 @@ class FrontendController extends Controller
 
     public function modalAnytimeInformationList($id)
     {
-        $category = AnytimeInformation::where('id', $id)->first();
+        $decryptedID = decrypt($id);
+        $category = AnytimeInformation::where('id', $decryptedID)->first();
 
-        $items = AnytimeInformationList::where('parent_id', $id)->get();
+        $items = AnytimeInformationList::where('parent_id', $decryptedID)->get();
 
         return response()->json([
             "category" => $category,
@@ -74,9 +77,10 @@ class FrontendController extends Controller
 
     public function modalPeriodicInformationList($id)
     {
-        $category = PeriodicInformation::where('id', $id)->first();
+        $decryptedID = decrypt($id);
+        $category = PeriodicInformation::where('id', $decryptedID)->first();
 
-        $items = PeriodicInformationList::where('parent_id', $id)->get();
+        $items = PeriodicInformationList::where('parent_id', $decryptedID)->get();
 
         return response()->json([
             "category" => $category,
@@ -86,9 +90,10 @@ class FrontendController extends Controller
 
     public function modalImmediatelyInformationList($id)
     {
-        $category = ImmediatelyInformation::where('id', $id)->first();
+        $decryptedID = decrypt($id);
+        $category = ImmediatelyInformation::where('id', $decryptedID)->first();
 
-        $items = ImmediatelyInformationList::where('parent_id', $id)->get();
+        $items = ImmediatelyInformationList::where('parent_id', $decryptedID)->get();
 
         return response()->json([
             "category" => $category,
@@ -98,9 +103,10 @@ class FrontendController extends Controller
 
     public function modalOtherInformationList($id)
     {
-        $category = OtherInformation::where('id', $id)->first();
+        $decryptedID = decrypt($id);
+        $category = OtherInformation::where('id', $decryptedID)->first();
 
-        $items = OtherInformationList::where('parent_id', $id)->get();
+        $items = OtherInformationList::where('parent_id', $decryptedID)->get();
 
         return response()->json([
             "category" => $category,

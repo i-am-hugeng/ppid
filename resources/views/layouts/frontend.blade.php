@@ -479,7 +479,7 @@
                                 </div>
                                 <div class="col-sm-11 mt-2">
                                     <h5>
-                                        <a id="{{ $regulationContent->id }}" class="regulation-list"
+                                        <a id="{{Crypt::encrypt($regulationContent->id) }}" class="regulation-list"
                                             href="javascript:void(0)">{{ $regulationContent->category }}</a>
                                     </h5>
                                 </div>
@@ -509,7 +509,7 @@
                                 </div>
                                 <div class="col-sm-11 mt-2">
                                     <h5>
-                                        <a id="{{ $anytimeInformationContent->id }}" class="anytime-information-list"
+                                        <a id="{{ Crypt::encrypt($anytimeInformationContent->id) }}" class="anytime-information-list"
                                             href="javascript:void(0)">{{ $anytimeInformationContent->category }}</a>
                                     </h5>
                                 </div>
@@ -539,7 +539,7 @@
                                 </div>
                                 <div class="col-sm-11 mt-2">
                                     <h5>
-                                        <a id="{{ $periodicInformationContent->id }}"
+                                        <a id="{{ Crypt::encrypt($periodicInformationContent->id) }}"
                                             class="periodic-information-list"
                                             href="javascript:void(0)">{{ $periodicInformationContent->category }}</a>
                                     </h5>
@@ -570,7 +570,7 @@
                                 </div>
                                 <div class="col-sm-11 mt-2">
                                     <h5>
-                                        <a id="{{ $immediatelyInformationContent->id }}"
+                                        <a id="{{ Crypt::encrypt($immediatelyInformationContent->id) }}"
                                             class="immediately-information-list"
                                             href="javascript:void(0)">{{ $immediatelyInformationContent->category }}</a>
                                     </h5>
@@ -601,7 +601,7 @@
                                 </div>
                                 <div class="col-sm-11 mt-2">
                                     <h5>
-                                        <a id="{{ $otherInformationContent->id }}" class="other-information-list"
+                                        <a id="{{ Crypt::encrypt($otherInformationContent->id) }}" class="other-information-list"
                                             href="javascript:void(0)">{{ $otherInformationContent->category }}</a>
                                     </h5>
                                 </div>
